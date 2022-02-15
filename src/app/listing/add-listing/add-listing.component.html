@@ -1,0 +1,31 @@
+<p>add-listing works!</p>
+<mat-card> 
+    <div class="form-style">
+        <h1>Add New Employee</h1>
+        <form [formGroup]="listingForm" (ngSubmit)="newListing()">
+            <mat-form-field>
+            <input matInput type="text" placeholder="Enter Name" formControlName="name"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <input matInput type="date" placeholder="Enter DOB" formControlName="dob"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <input matInput type="text" placeholder="Enter Role" formControlName="role"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <input matInput type="email" placeholder="Enter Email" formControlName="email"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+            <input matInput type="password" placeholder="Enter Password" formControlName="password"/>
+            </mat-form-field>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Add" [disabled]="!listingForm.valid"/>
+        </form>
+    </div>
+    </mat-card>
+    
+    

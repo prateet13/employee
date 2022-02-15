@@ -1,0 +1,37 @@
+<mat-card>
+    <div>
+        
+        <h4>Name : {{listing.name}}</h4>
+        <h4>DOB : {{listing.dob | date}}</h4>
+        <h4>Role : {{listing.role}}</h4>
+    </div>
+    <div class="example-button-row">
+    <button mat-raised-button color="primary" *ngIf="userService.loggedIn()"(click)="showEdit()">Edit</button>
+    <button mat-raised-button color="warn" *ngIf="userService.loggedIn()"(click) = "removeListing()">Delete</button>
+    </div>
+    
+    
+    </mat-card>
+    <mat-card *ngIf="showForm">
+    <div >
+        <h1>Edit Employee</h1>
+        <form [formGroup]="editListingForm" (ngSubmit)="editListing()">
+            <mat-form-field>
+            <input matInput type="text" placeholder="Enter Name" [(ngModel)]="listing.name" formControlName="name"/>
+            </mat-form-field>
+            <br>
+    
+            <mat-form-field>
+            <input matInput type="date" placeholder="Enter DOB" [(ngModel)]="listing.dob" formControlName="dob"/>
+            </mat-form-field>
+            <br>
+    
+            <mat-form-field>
+            <input matInput  type="text" placeholder="Enter Role" [(ngModel)]="listing.role" formControlName="role"/>
+            </mat-form-field>
+            <br>
+    
+            <input class="btn btn-primary" type="submit" value="Add" [disabled]="!editListingForm.valid"/>
+        </form>
+    </div>
+    </mat-card>

@@ -1,0 +1,20 @@
+<!--<nav> 
+    <h3>Project Employee</h3>
+    <ul class = "nav justify-content-end">
+        <li class="nav-item"><a class="nav-link" routerLink="/home">All Listings</a></li>
+        <li *ngIf="userService.loggedIn()" class="nav-item"><a class="nav-link" routerLink="home/add-listing">Add Listing</a></li>
+        <li *ngIf="!userService.loggedIn()" class="nav-item"><a class="nav-link" routerLink="user/login">Login</a></li>
+        <li *ngIf="userService.loggedIn()" class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="userService.logOut()">Log Out</a></li>
+    </ul>
+</nav>
+<hr>
+-->
+<mat-toolbar>
+    <span>Project Employee</span>
+    <span class="example-spacer"></span>
+  
+    <span><a style="color: black;" class="nav-link" routerLink="/home">All Listings</a></span>
+    <span *ngIf="userService.loggedIn()" class="nav-item"><a style="color: black;" class="nav-link" routerLink="home/add-listing">Add Listing</a></span>
+    <span *ngIf="!userService.loggedIn()"><a style="color: black;" class="nav-link" routerLink="user/login">Login</a></span>
+    <span *ngIf="userService.loggedIn()" class="nav-item"><a class="nav-link" style="cursor: pointer;" (click)="userService.logOut()">Log Out</a></span>
+  </mat-toolbar>

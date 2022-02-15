@@ -1,0 +1,44 @@
+<!--<div >
+    <h3>User Login</h3>
+    <form class="form-style" [formGroup]="loginForm" (ngSubmit)="userLogin()" style="padding: 40;">
+        <mat-label>Email:</mat-label>
+        <input 
+        type="email"
+        placeholder="Enter Email"
+        formControlName="email"
+        />
+        <br>
+        <input
+        type="password"
+        placeholder="Enter password"
+        formControlName="password"
+        />
+        <input type="submit" value="Login" [disabled]="!loginForm.valid">
+    </form>
+</div>
+<hr>-->
+
+<mat-card>
+    <div >
+        <mat-card-title>Login</mat-card-title>
+        <form class="form-style" [formGroup]="loginForm" (ngSubmit)="userLogin()" style="padding: 40;">
+        <mat-form-field>
+            <input matInput
+            type="email"
+            placeholder="Enter Email"
+            formControlName="email"
+            />
+        </mat-form-field>
+        <br>
+            <mat-form-field>
+            <input matInput
+            type="password"
+            placeholder="Enter password"
+            formControlName="password"
+            />
+            </mat-form-field>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Login" [disabled]="!loginForm.valid">
+            </form>
+    </div>
+</mat-card>
